@@ -9,3 +9,14 @@ let people = [
 ];
 
 listOfNames(people);
+
+for (i in people) {
+      document.write('#content');
+     
+}
+
+
+
+ 
+
+
