@@ -1,6 +1,32 @@
 function highlightWords(paragraph, colours) {
   // Write your code here...
+  let pGraph = document.createElement('p');
+  let selectBox = document.createElement('select');
+
+
+  // This loops over the array of colors and adds the option to the select menu
+for (let i = 0; i < colours.length; i++){
+  let optionColour = document.createElement('option');
+  optionColour.innerHTML = `${colours[i]}`;
+  selectBox.appendChild(optionColour);
 }
+
+let wordsArr = paragraph.split(' ');// changes the paragraph into an array
+for(let i =0; i < wordsArr.length; i++) {
+    let span = document.createElement('span');
+    span.innerHTML = `${wordsArr[i]} `;
+    span.addEventListener("click", function (e) {
+      e.target.style.backgroundColor = selectBox.value;
+    })
+    pGraph.appendChild(span);
+}
+ 
+  
+document.getElementById('content').appendChild(selectBox);//this adds the select box to the document
+document.getElementById("content").appendChild(pGraph);
+}
+
+
 
 const paragraph =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur convallis massa ut sem finibus ultrices. Phasellus hendrerit placerat libero non facilisis. Etiam tincidunt ut elit id elementum. Etiam accumsan semper ipsum, ac porttitor ex tempus non. Donec vitae massa condimentum, faucibus magna non, sagittis libero. Phasellus ullamcorper malesuada tellus at egestas. Duis volutpat turpis velit, ut bibendum tellus ornare ac. Nullam feugiat nisi fringilla eleifend scelerisque. Phasellus elit nulla, sodales eget consectetur sed, tincidunt vitae velit. Fusce eget tempus magna, vitae ultrices purus. Proin ac purus tellus. Curabitur rhoncus est quis libero egestas ultrices. Proin viverra a ex sed convallis. Fusce ut orci consectetur, placerat ipsum non, commodo neque. Nulla at dui velit. In ut accumsan libero. Duis ac lacus consectetur, posuere eros nec, aliquet nisl. Quisque sodales fringilla lacinia. Donec hendrerit ornare lectus, nec iaculis justo tincidunt et. Cras a varius libero, ac bibendum est. Aliquam molestie, leo non aliquam lobortis, nulla tortor hendrerit turpis, et ullamcorper magna diam quis elit. Maecenas elit libero, tincidunt sit amet lacinia sit amet, venenatis nec est.";
