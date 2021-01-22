@@ -25,4 +25,3 @@ greenButton.addEventListener("click", function() {
 });
 
 const submitBtn = document.getElementById('submit');
-submitBtn.addEventListener
